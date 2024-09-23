@@ -23,6 +23,8 @@ main() {
 		# session flag `-S`. This will cause an error, so we're falling back to
 		# starting plain nvim.
 		echo "nvim"
+  elif [[ "$ORIGINAL_COMMAND" =~ *'nvim'* ]]; then
+		echo "$ORIGINAL_COMMAND -c ':SessionRestore'"
 	else
 		echo "$ORIGINAL_COMMAND"
 	fi
